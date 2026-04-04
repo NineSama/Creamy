@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://cqow47bch5ocs"]
+[gd_scene format=3 uid="uid://becgdypu0jdt"]
 
-[ext_resource type="Script" uid="uid://cddoxt0ri67er" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="Script" path="res://main.gd" id="1_ig7tw"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ig7tw"]
 top_radius = 50.0

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://becgdypu0jdt"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://d1w5ccem33kle" path="res://scenes/player/player.tscn" id="2_0xm2m"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ig7tw"]
 top_radius = 50.0
@@ -21,5 +22,13 @@ mesh = SubResource("CylinderMesh_ig7tw")
 [node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1050011224]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=1000729791]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("CylinderShape3D_ig7tw")
+
+[node name="Player" parent="." unique_id=1114295025 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=1502879581]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 20, 10)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1150992450]
+transform = Transform3D(0.70710677, 0.70710677, 0, -0.49999997, 0.49999997, 0.70710677, 0.49999997, -0.49999997, 0.70710677, 50, 10, 0)

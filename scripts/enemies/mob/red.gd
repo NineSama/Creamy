@@ -27,7 +27,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func chase_player(delta: float):
-	print("player : ", player)
 	if not player:
 		return
 	
@@ -58,6 +57,5 @@ func attack_player():
 
 func _on_aggro_range_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		print("body entered")
 		player = body
 		current_state = State.CHASE

@@ -15,7 +15,7 @@ radius = 0.8
 [sub_resource type="SphereShape3D" id="SphereShape3D_55dqg"]
 radius = 15.0
 
-[node name="Red" type="CharacterBody3D" unique_id=111143776]
+[node name="Red" type="CharacterBody3D" unique_id=111143776 groups=["enemy"]]
 script = ExtResource("1_1diin")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=719712098]

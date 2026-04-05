@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cs1uunsliwjyv"]
+
+[ext_resource type="Script" uid="uid://c8pgmtb36olkt" path="res://scripts/ability/light/AetherShardProjectile.gd" id="1_xdhb6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uineq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_uineq"]
+
+[node name="AetherShardProjectile" type="Area3D" unique_id=237738941]
+script = ExtResource("1_xdhb6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=723150729]
+shape = SubResource("SphereShape3D_uineq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=250399868]
+mesh = SubResource("SphereMesh_uineq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

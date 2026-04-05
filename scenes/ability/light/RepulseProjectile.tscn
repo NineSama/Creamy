@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b2jj0wy8s3ori"]
+
+[ext_resource type="Script" uid="uid://vbel1u57cxrv" path="res://scripts/ability/light/RepulseProjectile.gd" id="1_ev74w"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dd2qb"]
+radius = 0.6
+
+[sub_resource type="SphereMesh" id="SphereMesh_dd2qb"]
+radius = 0.6
+height = 1.2
+
+[node name="RepulseProjectile" type="Area3D" unique_id=1780856445]
+script = ExtResource("1_ev74w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=430649451]
+shape = SubResource("SphereShape3D_dd2qb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=736039010]
+mesh = SubResource("SphereMesh_dd2qb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

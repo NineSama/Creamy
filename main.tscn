@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://becgdypu0jdt"]
 
 [ext_resource type="PackedScene" uid="uid://d1w5ccem33kle" path="res://scenes/player/player.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://k5iqnlf76y1p" path="res://scenes/enemies/mob/red.tscn" id="2_h2yge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -45,5 +46,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602545, 0, -0.86602545, 0.49999997, 0, 20, 10)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1150992450]
-transform = Transform3D(0.70710677, 0.70710677, 0, -0.49999997, 0.49999997, 0.70710677, 0.49999997, -0.49999997, 0.70710677, 50, 10, 0)
+transform = Transform3D(-0.7071067, 0.49999994, -0.49999994, 0, 0.7071067, 0.7071067, 0.7071067, 0.49999994, -0.49999994, 50, 10, 0)
 shadow_enabled = true
+
+[node name="Red" parent="." unique_id=111143776 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1, 10)

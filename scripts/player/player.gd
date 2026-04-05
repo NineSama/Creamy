@@ -12,7 +12,7 @@ func _physics_process(delta: float) -> void:
 func handle_movement(delta: float):
 	var input_dir = Input.get_vector("move_left", "move_right", "move_front", "move_back")
 	var direction = Vector3(input_dir.x, 0, input_dir.y)
-
+	
 	if direction:
 		velocity.x = direction.x * move_speed
 		velocity.z = direction.z * move_speed

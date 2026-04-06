@@ -20,7 +20,7 @@ var attack_range: float = 4.0
 var attack_damage: float = 10.0
 var can_attack: bool = true
 var is_knocked: bool = false
-var knockback_speed: float = 20.0
+var knockback_speed: float = 25.0
 var knockback_force: float = 0.0
 var knockback_dir: Vector3 = Vector3.ZERO
 
@@ -83,7 +83,6 @@ func hit_indicator():
 	mesh.material_override.albedo_color = color
 
 func apply_knockback(dir: Vector3, force: float):
-	print("hello")
 	is_knocked = true
 	knockback_dir = dir.normalized()
 	knockback_force = force

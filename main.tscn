@@ -19,13 +19,13 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ig7tw"]
-top_radius = 25.0
-bottom_radius = 25.0
+top_radius = 50.0
+bottom_radius = 50.0
 height = 1.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ig7tw"]
 height = 1.0
-radius = 25.0
+radius = 50.0
 
 [node name="Main" type="Node3D" unique_id=2053991392]
 

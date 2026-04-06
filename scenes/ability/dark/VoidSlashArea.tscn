@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://ba3e5fd54whhe"]
+
+[ext_resource type="Script" uid="uid://ryr85whvh2ay" path="res://scripts/ability/dark/VoidSlashArea.gd" id="1_3x4tl"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kj0y6"]
+height = 0.5
+radius = 7.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3x4tl"]
+albedo_color = Color(0.0056585064, 0.009155602, 0.06487212, 1)
+
+[node name="VoidSlashArea" type="Area3D" unique_id=1947065878]
+script = ExtResource("1_3x4tl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=74588635]
+shape = SubResource("CylinderShape3D_kj0y6")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=457447899]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=2109506959]
+radius = 7.0
+height = 0.2
+sides = 32
+material = SubResource("StandardMaterial3D_3x4tl")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=207030895]
+transform = Transform3D(0.57912046, 0, 0.70710677, 0, 1, 0, -0.57912046, 0, 0.70710677, 7.792345, 0, 1.9121796)
+operation = 2
+size = Vector3(20.157349, 2, 13.665039)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=573310400]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -5.9704847, 0.054364204, 4.609008)
+operation = 2
+size = Vector3(27.085327, 2.1464844, 14.855957)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCombiner3D" unique_id=177613507]
+operation = 2
+radius = 2.0
+height = 1.0
+sides = 32
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

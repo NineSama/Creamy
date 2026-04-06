@@ -13,7 +13,7 @@ var player: Node3D
 # --- Red Config ---
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 var color: Color = Color8(94, 162, 124)
-var move_speed: float = 7.0
+var move_speed: float = 18.0
 var max_hp: float = 200.0
 var current_hp: float = 200.0
 var attack_range: float = 4.0

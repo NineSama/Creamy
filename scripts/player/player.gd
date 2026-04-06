@@ -6,9 +6,12 @@ class_name Player
 # --- Player config ---
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 var color: Color = Color(0.382, 0.49, 0.535, 1.0)
-var move_speed: float = 10.0
+var move_speed: float = 20.0
 var max_hp: float = 100.0
 var current_hp: float = 100.0
+
+# --- Form System ---
+var form: swapForm
 
 # --- Dash System ---
 var dash: playerDash
@@ -26,14 +29,15 @@ signal hp_changed(current: float, max: float)
 
 func _ready() -> void:
 	add_to_group("player")
+	if mesh.material_override == null:
+		mesh.material_override = StandardMaterial3D.new()
+	form = swapForm.new()
+	form.apply_color(self)
 	dash = playerDash.new(self)
 	gcd = GCD.new()
 	aether_shard = AetherShard.new()
 	repulse = Repulse.new()
 	emit_signal("hp_changed", current_hp, max_hp)
-	if mesh.material_override == null:
-		mesh.material_override = StandardMaterial3D.new()
-	mesh.material_override.albedo_color = color
 
 func _physics_process(delta: float) -> void:
 	aether_shard.update(delta)
@@ -61,10 +65,12 @@ func handle_movement(delta: float):
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("dash"):
 		dash.start_dash(last_direction)
-	if event.is_action_pressed("aether_shard"):
+	if event.is_action_pressed("aether_shard") and form.is_light():
 		aether_shard.cast(self)
-	if event.is_action_pressed("repulse"):
+	if event.is_action_pressed("repulse") and form.is_light():
 		repulse.cast(self)
+	if event.is_action_pressed("swap"):
+		form.swap_form(self)
 
 func get_input_direction() -> Vector3:
 	var input_dir = Input.get_vector("move_left", "move_right", "move_front", "move_back")

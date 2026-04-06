@@ -19,13 +19,13 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ig7tw"]
-top_radius = 50.0
-bottom_radius = 50.0
+top_radius = 25.0
+bottom_radius = 25.0
 height = 1.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ig7tw"]
 height = 1.0
-radius = 50.0
+radius = 25.0
 
 [node name="Main" type="Node3D" unique_id=2053991392]
 
@@ -64,10 +64,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2547035, 1.4655361, -36.96
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050388336, 1.4655361, 25.976389)
 
 [node name="Red5" parent="." unique_id=1872301330 instance=ExtResource("2_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.477825, 1.4655361, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.360552, 1.4655361, 10)
 
 [node name="Red6" parent="." unique_id=1986591909 instance=ExtResource("2_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.319847, 1.4655361, -11.374151)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.538418, 1.0569687, -15.087014)
 
 [node name="Red7" parent="." unique_id=473321930 instance=ExtResource("2_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.4655361, 29.798962)

@@ -3,7 +3,7 @@ class_name playerDash
 
 # --- Dash Config ---
 var dash_direction: Vector3 = Vector3.FORWARD
-var dash_speed: float = 30.0
+var dash_speed: float = 50.0
 var dash_timer: float = 0.0
 var dash_duration: float = 0.2
 var is_dashing: bool = false

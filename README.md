@@ -12,6 +12,8 @@ DONE :
 		Can take damage
 		Can apply knockback
 		Can die
+	Basic UI
+		HP Bar
 
 TO DO :
 	Red can hit
@@ -19,6 +21,5 @@ TO DO :
 	Player can die
 	Ability cooldowns
 	Basic UI
-		HP Bar
 		Cooldowns
 		GCD

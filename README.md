@@ -4,8 +4,9 @@ DONE :
 	WASD Movement
 	WASD Dash
 	Cursor aim
-	Ability 1 : Aether shard
-	Ability 2 : Repulse
+	Ability 1 Light : Aether shard
+	Ability 2 Light : Repulse
+	Ability 1 Dark : Void Slash
 	Global Cooldown
 	Enemy : Red
 		Can chase

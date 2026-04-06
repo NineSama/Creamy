@@ -12,6 +12,9 @@ func cast(player):
 	if not can_cast():
 		return
 	
+	if player.gcd.is_on_gcd():
+		return
+	
 	var projectile = projectile_scene.instantiate()
 	player.get_parent().add_child(projectile)
 	
@@ -19,3 +22,4 @@ func cast(player):
 	projectile.setup(player.get_aim_direction(), speed, damage, max_range, force)
 	
 	trigger_cooldown()
+	player.gcd.trigger_gcd()

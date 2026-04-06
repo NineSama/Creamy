@@ -3,7 +3,7 @@ extends CharacterBody3D
 @onready var gravity: float = -9.8
 
 # --- Player config ---
-var move_speed: float = 8.0
+var move_speed: float = 10.0
 var max_hp: float = 100.0
 var current_hp: float = 100.0
 
@@ -11,18 +11,23 @@ var current_hp: float = 100.0
 var dash: playerDash
 var last_direction: Vector3 = Vector3.FORWARD
 
+# --- GCD System ---
+var gcd: GCD
+
 # --- Ability System ---
 var aether_shard: AetherShard
 var repulse: Repulse
 
 func _ready() -> void:
 	dash = playerDash.new(self)
+	gcd = GCD.new()
 	aether_shard = AetherShard.new()
 	repulse = Repulse.new()
 
 func _physics_process(delta: float) -> void:
 	aether_shard.update(delta)
 	repulse.update(delta)
+	gcd.update(delta)
 	if dash.is_dashing:
 		dash.handle_dash(delta)
 	else:

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="CREAMY"
 run/main_scene="uid://becgdypu0jdt"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://efvme1qdhdxi"

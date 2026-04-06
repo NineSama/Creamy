@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dno678p3hn6ho"]
+
+[ext_resource type="Script" uid="uid://cv4hikilghk0f" path="res://scripts/ui/healthbar.gd" id="1_x8sm2"]
+
+[node name="Healthbar" type="Control" unique_id=914034051]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_x8sm2")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1133938985]
+layout_mode = 0
+offset_right = 246.0
+offset_bottom = 25.0
+color = Color(0.13319641, 0.13319641, 0.13319638, 1)
+
+[node name="DamageBar" type="ColorRect" parent="Background" unique_id=1731338948]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 243.0
+offset_bottom = 22.0
+color = Color(0.59765714, 0.955393, 0.9999997, 1)
+
+[node name="FillBar" type="ColorRect" parent="Background" unique_id=1566136598]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 243.0
+offset_bottom = 22.0
+color = Color(9.62615e-07, 0.6257437, 0.6839851, 1)
+
+[node name="Label" type="Label" parent="." unique_id=771719459]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 1.0
+offset_right = 124.0
+offset_bottom = 24.0

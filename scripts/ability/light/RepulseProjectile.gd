@@ -8,11 +8,11 @@ var max_range: float
 var direction: Vector3
 var distance_traveled: float = 0.0
 
-func setup(dir: Vector3, spd: float, dmg: float, range: float, frc: float):
+func setup(dir: Vector3, spd: float, dmg: float, rge: float, frc: float):
 	direction = dir
 	speed = spd
 	damage = dmg
-	max_range = range
+	max_range = rge
 	force = frc
 
 func _physics_process(delta: float) -> void:

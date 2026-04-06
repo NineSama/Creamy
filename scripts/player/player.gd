@@ -1,8 +1,11 @@
 extends CharacterBody3D
+class_name Player
 
 @onready var gravity: float = -9.8
 
 # --- Player config ---
+@onready var mesh: MeshInstance3D = $MeshInstance3D
+var color: Color = Color(0.382, 0.49, 0.535, 1.0)
 var move_speed: float = 10.0
 var max_hp: float = 100.0
 var current_hp: float = 100.0
@@ -18,11 +21,19 @@ var gcd: GCD
 var aether_shard: AetherShard
 var repulse: Repulse
 
+# --- UI System ---
+signal hp_changed(current: float, max: float)
+
 func _ready() -> void:
+	add_to_group("player")
 	dash = playerDash.new(self)
 	gcd = GCD.new()
 	aether_shard = AetherShard.new()
 	repulse = Repulse.new()
+	emit_signal("hp_changed", current_hp, max_hp)
+	if mesh.material_override == null:
+		mesh.material_override = StandardMaterial3D.new()
+	mesh.material_override.albedo_color = color
 
 func _physics_process(delta: float) -> void:
 	aether_shard.update(delta)
@@ -72,3 +83,17 @@ func get_aim_direction() -> Vector3:
 		return last_direction
 	var direction = (hit_position - global_position).normalized()
 	return direction
+
+func take_damage(amount: float):
+	current_hp -= amount
+	hit_indicator()
+	print("Player : ", current_hp)
+	emit_signal("hp_changed", current_hp, max_hp)
+	if current_hp <= 0.0:
+		print("You died!")
+		queue_free()
+
+func hit_indicator():
+	mesh.material_override.albedo_color = Color(0.504, 0.161, 0.077, 1.0)
+	await get_tree().create_timer(0.1).timeout
+	mesh.material_override.albedo_color = color

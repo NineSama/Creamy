@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://d1w5ccem33kle" path="res://scenes/player/player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://k5iqnlf76y1p" path="res://scenes/enemies/mob/red.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://drqqefpkoi6ms" path="res://scripts/ui/ui.gd" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://dno678p3hn6ho" path="res://scenes/ui/Healthbar.tscn" id="3_h2yge"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -50,4 +52,34 @@ transform = Transform3D(-0.7071067, 0.49999994, -0.49999994, 0, 0.7071067, 0.707
 shadow_enabled = true
 
 [node name="Red" parent="." unique_id=111143776 instance=ExtResource("2_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.433762, 1.4655361, -22.399765)
+
+[node name="Red2" parent="." unique_id=842150058 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.837341, 1.4655361, 10)
+
+[node name="Red3" parent="." unique_id=666511495 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2547035, 1.4655361, -36.96527)
+
+[node name="Red4" parent="." unique_id=828018823 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050388336, 1.4655361, 25.976389)
+
+[node name="Red5" parent="." unique_id=1872301330 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.477825, 1.4655361, 10)
+
+[node name="Red6" parent="." unique_id=1986591909 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.319847, 1.4655361, -11.374151)
+
+[node name="Red7" parent="." unique_id=473321930 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.4655361, 29.798962)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1337329540]
+script = ExtResource("3_1bvp3")
+
+[node name="Control" type="Control" parent="UI" unique_id=323323002]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Healthbar" parent="UI/Control" unique_id=914034051 instance=ExtResource("3_h2yge")]
+layout_mode = 0

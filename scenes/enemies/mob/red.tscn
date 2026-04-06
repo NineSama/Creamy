@@ -3,14 +3,16 @@
 [ext_resource type="Script" uid="uid://cfc32rsqbiiqi" path="res://scripts/enemies/mob/red.gd" id="1_1diin"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_55dqg"]
-radius = 0.8
+radius = 1.6
+height = 4.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55dqg"]
 albedo_color = Color(0.36741436, 0.6361756, 0.48819035, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_55dqg"]
 material = SubResource("StandardMaterial3D_55dqg")
-radius = 0.8
+radius = 1.6
+height = 4.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_55dqg"]
 radius = 15.0

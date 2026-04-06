@@ -14,5 +14,5 @@ func can_cast() -> bool:
 func trigger_cooldown():
 	cooldown_timer = cooldown
 
-func cast(player):
+func cast(_player):
 	pass

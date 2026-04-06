@@ -4,7 +4,7 @@ class_name AetherShard
 var projectile_scene = preload("res://scenes/ability/light/AetherShardProjectile.tscn")
 
 var damage: float = 10.0
-var speed: float = 30.0
+var speed: float = 50.0
 var max_range: float = 25.0
 
 func cast(player):
